@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notice Board App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <h1>📢 Notice Board</h1>
+
+  <div class="box">
+    <textarea id="text" placeholder="Write notice..."></textarea>
+    <input type="file" id="image" accept="image/*">
+    <button onclick="addNotice()">Post Notice</button>
+  </div>
+
+  <div id="notices"></div>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
